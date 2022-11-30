@@ -1,0 +1,35 @@
+{
+  "name": "sv-todo-4",
+  "version": "1.0.0",
+  "description": "This template should help get you started developing with Svelte in Vite.",
+  "main": "svelte.config.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nwpcgn/sv-todo-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nwpcgn/sv-todo-4/issues"
+  },
+  "homepage": "https://github.com/nwpcgn/sv-todo-4#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "svelte": "^3.52.0",
+    "vite": "^3.2.3",
+    "sass": "^1.53.0",
+    "svelte-preprocess": "^4.10.7",
+    "bootstrap": "^5.2.0",
+    "@popperjs/core": "^2.11.5"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.1.0",
+    "svelte-spa-router": "^3.3.0"
+  }
+}
