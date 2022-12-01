@@ -6,7 +6,6 @@
   export let icon_size = "24";
   export let brand_size = "36";
   let icon_style = `--fs: ${icon_size}px;`;
-  // $: console.log($router.path);
 </script>
 
 <nav class="bg-primary navbar navbar-dark navbar-expand shadow sticky-top">

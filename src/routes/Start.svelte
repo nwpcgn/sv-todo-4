@@ -3,41 +3,27 @@
   import bgimg from '../assets/jc001.jpg';
   import SignOut from "../lib/components/SignOut.svelte";
   export let titel = "Nwp-Studio";
-  export let sub = "Application";
-  export let bg =
-    "https://nwp-cgn.de/studio/upload/kat11/server/php/files/jc1.png";
   export let bg_size = "cover";
 </script>
 
-<section
-  style="background-image: url({bgimg}); background-size: {bg_size}; background-repeat: no-repeat;"
->
-  <header class="container p-5">
-    <h2 class="display-4">
-      {titel}
-    </h2>
-    <p class="fs-5">{sub}</p>
-    <div class="py-2">
-      {#if $_user}
-        <div class="mb-2">
-          <a class="btn btn-dark btn-lg" href="#/data/" role="button"
-            >Start Application</a
-          >
-        </div>
-        <div>
-          <SignOut>
-          <button class="btn btn-link text-danger btn-md"
-            >Logout</button
-          ></SignOut>
-        </div>
-      {:else}
-        <div>
-          <a class="btn btn-dark btn-lg" href="#/login/" role="button">Anmelden</a
-          >
-        </div>
-      {/if}
-    </div>
-  </header>
+<section style="background-image: url({bgimg}); background-size: {bg_size}; background-repeat: no-repeat;">
+  <header class="container p-4">
+      <h2 class="display-1 fw-bold"> {titel} </h2>
+      <div> {#if $_user}
+      <div class="py-4">
+        <a class="btn btn-outline-primary btn-lg px-4" href="#/data/" role="button"
+          >Start Application</a
+        >
+      </div>
+      <div>
+        <SignOut>
+        <button class="btn btn-link text-danger btn-sm"
+          >Logout</button
+        ></SignOut>
+      </div>
+    {/if}
+  </div>
+</header>
 </section>
 
 <style>

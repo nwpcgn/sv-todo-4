@@ -1,6 +1,4 @@
 <script>
-  // import { link } from "svelte-spa-router";
-  // import active from "svelte-spa-router/active";
   import Loader from "../lib/data/comp/Loader.svelte";
   import { _user, supabase, _settings } from "../lib/data";
   import Profile from "./admin/Profile.svelte";
@@ -8,6 +6,7 @@
   let loading;
   let profile = null;
   let editing;
+  let dura = 500;
   const generateProfil = async () => {
     console.log("generateProfil");
     try {
@@ -52,32 +51,20 @@
 </script>
 
 <section class="container-lg py-4">
-  <nav
-    class="nav justify-content-end {$_settings.op2 ? 'nav-pills' : 'nav-tabs'}"
-  >
-    <button
-      class="nav-link"
-      on:click={() => {
-        editing = false;
-      }}
-      class:active={!editing}>Profile</button
-    >
-    <button
-      class="nav-link"
-      on:click={() => {
-        editing = true;
-      }}
-      class:active={editing}>Edit</button
-    >
+  <nav class="nav justify-content-end {$_settings.op2 ? 'nav-pills' : 'nav-tabs'}">
+      <button class="nav-link" on:click={()=> { editing = false; }} class:active={!editing}>Profile</button>
+      <button class="nav-link" on:click={()=> { editing = true; }} class:active={editing}>Edit</button>
   </nav>
-</section>
+</section> 
 
 {#if profile}
   {#if loading}
     <Loader />
   {:else if editing}
-    <ProfileEdit bind:editing {profile} {getProfil} />
+    <ProfileEdit bind:editing {profile} {dura} {getProfil} />
   {:else}
-    <Profile bind:editing {profile} />
+    <Profile bind:editing {profile} {dura} />
   {/if}
 {/if}
+
+

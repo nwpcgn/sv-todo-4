@@ -17,7 +17,7 @@
     </nav>
   </section>
   {#if $_user}
-    <section class="container-lg py-4">
+    <section class="container-lg">
       <SetForm />
     </section>
   {/if}
