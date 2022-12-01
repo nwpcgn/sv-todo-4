@@ -1,45 +1,40 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import { onMount } from "svelte";
+  import { _user, supabase, sleep } from "./lib/data";
+  import { push } from "svelte-spa-router";
+  import SignIn from "./lib/components/SignIn.svelte";
+  import Page from "./lib/components/Page.svelte";
+  import Iconlib from "./lib/components/Iconlib.svelte";
+  import Router from "./routes/_Router.svelte";
+
+  const changeAuth = async (obj) => {
+    await sleep(1000);
+    _user.set(obj);
+  };
+
+  onMount(async () => {
+    _user.set(supabase.auth.getUser());
+    push("/");
+  });
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event == "SIGNED_IN") {
+      changeAuth(session.user);
+    } else {
+      changeAuth(null);
+    }
+  });
+  $: if (!$_user) {
+    push("/");
+  }
 </script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<Iconlib />
 
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+{#if $_user}
+  <Router />
+{:else}
+  <Page center>
+    <SignIn />
+  </Page>
+{/if}
