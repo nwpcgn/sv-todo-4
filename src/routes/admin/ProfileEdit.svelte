@@ -38,7 +38,6 @@
       editing = false;
     }
   };
-  username;
 </script>
 
 <section {...$$restProps}>
@@ -152,6 +151,7 @@
                 on:click={() => {
                   editing = false;
                 }}
+                disabled={!$_settings.op4}
                 class="d-blockxw-100 btn btn-primary me-2"
                 class:btn-lg={$_settings.op1}>Show Profile</button
               >

@@ -71,12 +71,13 @@
       <div class="row justify-content-center mt-5">
         <div class="col-12 col-lg-10 text-end">
           <button
-          on:click={() => {
-            editing = true;
-          }}
-            class="btn btn-primary"
-            class:btn-lg={$_settings.op1}
-            role="button">Bearbeiten</button>
+            on:click={() => {
+              editing = true;
+            }}
+             disabled={!$_settings.op4}
+            class="btn btn-primary me-2"
+            class:btn-lg={$_settings.op1}>Bearbeiten</button
+          >
           <SignOut bind:loading>
             <button
               type="button"

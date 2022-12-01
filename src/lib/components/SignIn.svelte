@@ -53,7 +53,6 @@
       class="form-control"
       placeholder="Email address"
       required=""
-      autofocus=""
     />
     <label for="inputPassword" class="visually-hidden">Password</label>
     <input
@@ -73,7 +72,7 @@
     >
     <button on:click={resetForm} class="w-100 btn btn-link" type="reset">Clear</button>
     <p class="mt-3 mb-3">
-      ©nwp-studio <a href="/signup" class="text-center">Anmelden</a>
+      ©nwp-studio <!-- <a href="/signup" class="text-center">Anmelden</a> -->
     </p>
   </form>
 </section>

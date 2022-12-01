@@ -1,5 +1,6 @@
 <script>
   import { _user } from "../lib/data";
+  import SignOut from "../lib/components/SignOut.svelte";
   export let titel = "Nwp-Studio";
   export let sub = "Application";
   export let bg =
@@ -22,10 +23,16 @@
             >Start Application</a
           >
         </div>
-        <div>
-          <a class="btn btn-link btn-lg" href="#/user/" role="button"
+<!--         <div>
+          <a class="btn btn-link btn-md" href="#/user/" role="button"
             >User Panel</a
           >
+        </div> -->
+        <div>
+          <SignOut>
+          <button class="btn btn-link text-danger btn-md"
+            >Logout</button
+          ></SignOut>
         </div>
       {:else}
         <div>

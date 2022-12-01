@@ -6,10 +6,10 @@
     h1: "Layout",
     h2: "Privacy",
     t1: "Form Size XL",
-    t2: "Tab Pills",
-    t3: "Option 3",
-    t4: "Option 4",
-    t5: "Option 5",
+    t2: "Tabstyle Pills",
+    t3: "Edit Btn Top",
+    t4: "Edit Btn Bottom",
+    t5: "Admin Modus",
     t6: "Option 6",
     t7: "Option 7",
     t8: "Option 8",
@@ -17,7 +17,7 @@
   let op1 = false;
   let op2 = false;
   let op3 = false;
-  let op4 = false;
+  let op4 = true;
   let op5 = false;
   let op6 = false;
   let op7 = false;

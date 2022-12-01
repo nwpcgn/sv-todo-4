@@ -1,4 +1,6 @@
 <script>
+  import { link } from "svelte-spa-router";
+  import active from "svelte-spa-router/active";
   import Loader from "../lib/data/comp/Loader.svelte";
   import { _user, supabase, sleep, _settings } from "../lib/data";
   import Profile from "./admin/Profile.svelte";
@@ -48,6 +50,21 @@
     getProfil();
   }
 </script>
+
+<section class="container-lg py-4">
+  <div class="row justify-content-center">
+    <div class="col col-lg-10">
+      <nav
+        class="nav justify-content-end {$_settings.op2
+          ? 'nav-pills'
+          : 'nav-tabs'}"
+      >
+        <button class="nav-link" on:click={() => { editing = false }} class:active={!editing}>Profile</button>
+        <button class="nav-link" on:click={() => { editing = true }} class:active={editing} disabled={!$_settings.op3}>Edit</button>
+      </nav>
+    </div>
+  </div>
+</section>
 
 {#if profile}
   {#if loading}
