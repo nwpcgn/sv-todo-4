@@ -1,6 +1,7 @@
 <script>
   import Router from "svelte-spa-router";
   import TopBar from "../lib/components/TopBar.svelte";
+  import Transition from "../lib/components/Transition.svelte";
   import Start from "./Start.svelte";
   import NotFound from "./NotFound.svelte";
   import Settings from "./Settings.svelte";
@@ -16,10 +17,6 @@
 </script>
 
 <TopBar />
-<main><Router {routes} /></main>
-
-<style>
-  main {
-    flex: 1;
-  }
-</style>
+<Transition>
+  <Router {routes} />
+</Transition>

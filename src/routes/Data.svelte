@@ -13,25 +13,17 @@
 
 <Page>
   <section class="container-lg py-4">
-    <div class="row justify-content-center">
-      <div class="col col-lg-10">
-        <nav
-          class="nav {$_settings.op2
-            ? 'nav-pills'
-            : 'nav-tabs'} justify-content-end"
-        >
-          <a class="nav-link" href="/data/" use:link use:active>Application</a>
-        </nav>
-      </div>
-    </div>
+    <nav
+      class="nav {$_settings.op2
+        ? 'nav-pills'
+        : 'nav-tabs'} justify-content-end"
+    >
+      <a class="nav-link" href="/data/" use:link use:active>Application</a>
+    </nav>
   </section>
   {#if $_user}
     <section class="container-lg py-4">
-      <div class="row justify-content-center">
-        <div class="col col-lg-10">
-          <Router {routes} {prefix} />
-        </div>
-      </div>
+      <Router {routes} {prefix} />
     </section>
   {/if}
 </Page>

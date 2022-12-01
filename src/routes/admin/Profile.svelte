@@ -8,13 +8,12 @@
   let loading;
   let icon_size = "20";
   let icon_style = `--fs: ${icon_size}px;`;
-  let colClass = "col-lg-10";
 </script>
 
 <section {...$$restProps}>
   <div class="container-lg py-4">
     <div class="row justify-content-center">
-      <div class="col-12 {colClass} text-center">
+      <div class="col-12 text-center">
         <!-- <h3>Profile</h3> -->
         <img
           src={img_url
@@ -24,7 +23,7 @@
           class="img-fluid mb-5"
         />
       </div>
-      <div class="col-12 {colClass}">
+      <div class="col-12">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
             <div class="align-items-start d-flex fs-6 justify-content-between">
@@ -68,13 +67,12 @@
           </li>
         </ul>
       </div>
-      <div class="row justify-content-center mt-5">
-        <div class="col-12 col-lg-10 text-end">
+      <footer class="row mt-5">
+        <div class="col-12 text-end">
           <button
             on:click={() => {
               editing = true;
             }}
-             disabled={!$_settings.op4}
             class="btn btn-primary me-2"
             class:btn-lg={$_settings.op1}>Bearbeiten</button
           >
@@ -87,7 +85,7 @@
             >
           </SignOut>
         </div>
-      </div>
+      </footer>
     </div>
   </div>
 </section>

@@ -11,7 +11,7 @@
     --ggs: 9;
   }
   aside {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     color: rgba(255, 255, 255, 0.8);
     z-index: 2000;
   }

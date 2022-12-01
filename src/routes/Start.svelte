@@ -1,5 +1,6 @@
 <script>
   import { _user } from "../lib/data";
+  import bgimg from '../assets/jc001.jpg';
   import SignOut from "../lib/components/SignOut.svelte";
   export let titel = "Nwp-Studio";
   export let sub = "Application";
@@ -9,7 +10,7 @@
 </script>
 
 <section
-  style="background-image: url({bg}); background-size: {bg_size}; background-repeat: no-repeat;"
+  style="background-image: url({bgimg}); background-size: {bg_size}; background-repeat: no-repeat;"
 >
   <header class="container p-5">
     <h2 class="display-4">
@@ -23,11 +24,6 @@
             >Start Application</a
           >
         </div>
-<!--         <div>
-          <a class="btn btn-link btn-md" href="#/user/" role="button"
-            >User Panel</a
-          >
-        </div> -->
         <div>
           <SignOut>
           <button class="btn btn-link text-danger btn-md"

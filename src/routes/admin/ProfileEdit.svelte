@@ -43,7 +43,7 @@
 <section {...$$restProps}>
   <div class="container-lg py-4">
     <div class="row justify-content-center">
-      <div class="col-12 col-lg-10 text-center">
+      <header class="col-12 text-center">
         <!--  <h3>Profile</h3> -->
         <img
           src={img_url
@@ -52,8 +52,8 @@
           alt="img"
           class="img-fluid mb-5"
         />
-      </div>
-      <div class="col-12 col-lg-10">
+      </header>
+      <div class="col-12">
         <form class="" on:submit|preventDefault={updateProfile}>
           <div class="mb-2 row">
             <label
@@ -151,14 +151,13 @@
                 on:click={() => {
                   editing = false;
                 }}
-                disabled={!$_settings.op4}
-                class="d-blockxw-100 btn btn-primary me-2"
+                class="btn btn-dark me-2"
                 class:btn-lg={$_settings.op1}>Show Profile</button
               >
         
               <button
                 type="submit"
-                class="d-blockxw-100 btn btn-secondary"
+                class="btn btn-primary"
                 class:btn-lg={$_settings.op1}
                 >{loading ? "... loading" : "Save Changes"}</button
               >

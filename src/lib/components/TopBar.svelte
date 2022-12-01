@@ -10,7 +10,7 @@
 </script>
 
 <nav class="bg-primary navbar navbar-dark navbar-expand shadow sticky-top">
-  <div class="container-fluid">
+  <div class="container-lg">
     <a class="my-0 navbar-brand py-0" href="#/">
       <NwpLogo height={brand_size} />
     </a>

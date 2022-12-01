@@ -11,6 +11,22 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px
+//   xl: 1140px,
+//   xxl: 1320px
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+  // xl: 1200px,
+  // xxl: 1400px
+);
 // $component-active-color:      #333333;
 // $component-active-bg:         $gray-100 !default;
 // $border-color:                $gray-100 !default;
@@ -22,6 +38,7 @@ $modal-header-padding-x: 1rem;
 $modal-header-padding-y: .5rem;
 $component-active-color:      $white !default;
 $component-active-bg:         $gray-600 !default;
+
 
 
 /* Override Bootstrap's variables here */

@@ -1,8 +1,8 @@
 <script>
-  import { link } from "svelte-spa-router";
-  import active from "svelte-spa-router/active";
+  // import { link } from "svelte-spa-router";
+  // import active from "svelte-spa-router/active";
   import Loader from "../lib/data/comp/Loader.svelte";
-  import { _user, supabase, sleep, _settings } from "../lib/data";
+  import { _user, supabase, _settings } from "../lib/data";
   import Profile from "./admin/Profile.svelte";
   import ProfileEdit from "./admin/ProfileEdit.svelte";
   let loading;
@@ -17,11 +17,11 @@
         .from("profiles")
         .insert([{ id: uid, username: "New User" }]);
       if (error) throw error;
+      getProfil();
     } catch (error) {
       alert(error.message);
     } finally {
       loading = false;
-      promise = getProfil($_user.id);
     }
   };
   const getProfil = async () => {
@@ -52,18 +52,24 @@
 </script>
 
 <section class="container-lg py-4">
-  <div class="row justify-content-center">
-    <div class="col col-lg-10">
-      <nav
-        class="nav justify-content-end {$_settings.op2
-          ? 'nav-pills'
-          : 'nav-tabs'}"
-      >
-        <button class="nav-link" on:click={() => { editing = false }} class:active={!editing}>Profile</button>
-        <button class="nav-link" on:click={() => { editing = true }} class:active={editing} disabled={!$_settings.op3}>Edit</button>
-      </nav>
-    </div>
-  </div>
+  <nav
+    class="nav justify-content-end {$_settings.op2 ? 'nav-pills' : 'nav-tabs'}"
+  >
+    <button
+      class="nav-link"
+      on:click={() => {
+        editing = false;
+      }}
+      class:active={!editing}>Profile</button
+    >
+    <button
+      class="nav-link"
+      on:click={() => {
+        editing = true;
+      }}
+      class:active={editing}>Edit</button
+    >
+  </nav>
 </section>
 
 {#if profile}
